@@ -2,24 +2,20 @@ terraform {
   required_providers {
     prowlarr = {
       source  = "devopsarr/prowlarr"
-      version = "2.4.0"
+      version = "3.0.2"
     }
     radarr = {
       source  = "devopsarr/radarr"
-      version = "2.2.0"
+      version = "2.3.3"
     }
     sonarr = {
       source  = "devopsarr/sonarr"
-      version = "3.2.0"
+      version = "3.4.0"
     }
-    # lidarr = {
-    #   source  = "devopsarr/lidarr"
-    #   version = "1.12.0"
-    # }
-    # readarr = {
-    #   source  = "devopsarr/readarr"
-    #   version = "2.1.0"
-    # }
+    lidarr = {
+      source  = "devopsarr/lidarr"
+      version = "1.13.0"
+    }
   }
 }
 
@@ -152,34 +148,18 @@ resource "sonarr_root_folder" "tv" {
 ## ---------------------------------------------------------------
 ## ---------------------------------------------------------------
 
-# provider "lidarr" {
-#   url     = var.lidarr_url
-#   api_key = var.lidarr_api_key
-# }
+provider "lidarr" {
+  url     = var.lidarr_url
+  api_key = var.lidarr_api_key
+}
 
-# data "lidarr_host" "lidarr_host" {
-#   provider = lidarr
-# }
+data "lidarr_host" "lidarr_host" {
+  provider = lidarr
+}
 
-# resource "lidarr_root_folder" "music" {
-#   path = "/music"
-# }
-
-## ---------------------------------------------------------------
-## ---------------------------------------------------------------
-
-# provider "readarr" {
-#   url     = var.readarr_url
-#   api_key = var.readarr_api_key
-# }
-
-# data "readarr_host" "readarr_host" {
-#   provider = readarr
-# }
-
-# resource "readarr_root_folder" "books" {
-#   path = "/books"
-# }
+resource "lidarr_root_folder" "music" {
+  path = "/music"
+}
 
 ## ---------------------------------------------------------------
 ## ---------------------------------------------------------------
