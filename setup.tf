@@ -1,18 +1,22 @@
 terraform {
   required_providers {
     prowlarr = {
+      # https://registry.terraform.io/providers/devopsarr/prowlarr/latest
       source  = "devopsarr/prowlarr"
       version = "3.0.2"
     }
     radarr = {
+      # https://registry.terraform.io/providers/devopsarr/radarr/latest
       source  = "devopsarr/radarr"
       version = "2.3.3"
     }
     sonarr = {
+      # https://registry.terraform.io/providers/devopsarr/sonarr/latest
       source  = "devopsarr/sonarr"
       version = "3.4.0"
     }
     lidarr = {
+      # https://registry.terraform.io/providers/devopsarr/lidarr/latest
       source  = "devopsarr/lidarr"
       version = "1.13.0"
     }
